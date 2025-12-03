@@ -1,0 +1,102 @@
+// login.js - Estilos para el componente Login
+import { StyleSheet } from 'react-native';
+
+export default StyleSheet.create({
+  overlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  box: {
+    width: '85%',
+    backgroundColor: '#fff',
+    padding: 30,
+    borderRadius: 16,
+    elevation: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#007AFF',
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  input: {
+    backgroundColor: '#f2f2f2',
+    padding: 14,
+    borderRadius: 12,
+    marginBottom: 12,
+    fontSize: 16,
+    color: '#333',
+  },
+  googleButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 12,
+    paddingVertical: 12,
+    justifyContent: 'center',
+    marginBottom: 12,
+    minHeight: 48,
+  },
+  googleIcon: {
+    width: 24,
+    height: 24,
+    marginRight: 10,
+  },
+  googleText: {
+    color: '#444',
+    fontWeight: '600',
+    fontSize: 15,
+  },
+  loginButton: {
+    backgroundColor: '#007AFF',
+    padding: 14,
+    borderRadius: 12,
+    alignItems: 'center',
+    marginTop: 10,
+    minHeight: 48,
+    justifyContent: 'center',
+  },
+  loginText: {
+    color: '#fff',
+    fontWeight: '700',
+    fontSize: 16,
+  },
+  registerButton: {
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#007AFF',
+    padding: 14,
+    borderRadius: 12,
+    alignItems: 'center',
+    marginTop: 10,
+    minHeight: 48,
+    justifyContent: 'center',
+  },
+  registerText: {
+    color: '#007AFF',
+    fontWeight: '600',
+    fontSize: 16,
+  },
+  buttonDisabled: {
+    opacity: 0.6,
+  },
+  skipButton: {
+    marginTop: 15,
+    alignItems: 'center',
+    padding: 8,
+  },
+  skipText: {
+    color: '#FF3B30',
+    fontWeight: '600',
+    fontSize: 15,
+  },
+});

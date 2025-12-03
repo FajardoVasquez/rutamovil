@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "267093356780",
+    "project_id": "rutas-4a2d0",
+    "storage_bucket": "rutas-4a2d0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267093356780:android:80a22565e86030737d75c9",
+        "android_client_info": {
+          "package_name": "com.ruta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267093356780-pae35mei41erobvd8jhcdtnd3re0b0j3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ruta",
+            "certificate_hash": "25682f0296fb20e1aede1d0de1f8770d6278bdfd"
+          }
+        },
+        {
+          "client_id": "267093356780-61j6l12lhevi4a14q7aihook3bna9i64.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByHjnD9RkISEimMXwFKHNcIABA1AOcVrk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267093356780-61j6l12lhevi4a14q7aihook3bna9i64.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

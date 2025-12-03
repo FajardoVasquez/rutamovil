@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import {
   View,
   TextInput,
@@ -15,7 +15,6 @@ import MapView, { Marker } from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
 import { styles } from '../Styles/MapaRutas.js';
 
-// Importar los hooks personalizados
 import { useLocation } from '../Hooks/useLocation';
 import { usePlacesSearch } from '../Hooks/usePlacesSearch';
 import { useNavigation } from '../Hooks/useNavigation';
@@ -43,10 +42,9 @@ const modosTransporte = [
   { mode: 'WALKING', icon: '🚶', label: 'Caminar' },
 ];
 
-export default function MapaRutas() {
+export default function Maparutaslogueado() {
   const mapRef = useRef(null);
 
-  // Hooks personalizados
   const {
     ubicacionActual,
     setUbicacionActual,
@@ -85,8 +83,6 @@ export default function MapaRutas() {
   const {
     modoTransporte,
     cambiarModoTransporte,
-    mostrarLogin,
-    setMostrarLogin,
     mostrarMenuTransporte,
     setMostrarMenuTransporte,
     panelBusquedaVisible,
@@ -118,7 +114,7 @@ export default function MapaRutas() {
       <MapView
         ref={mapRef}
         style={styles.map}
-        showsUserLocation={true}
+        showsUserLocation={false}
         showsMyLocationButton={false}
         showsTraffic={false}
         showsBuildings={true}
@@ -134,24 +130,35 @@ export default function MapaRutas() {
             : undefined
         }
       >
+        {/* ✅ MARCADOR PERSONALIZADO DE TU UBICACIÓN (PUNTO DE PARTIDA) */}
         {ubicacionActual && (
           <Marker
             coordinate={ubicacionActual}
             title="Mi ubicación"
             description="Punto de partida"
-            pinColor="green"
-          />
+            anchor={{ x: 0.5, y: 0.5 }}
+          >
+            <View style={styles.customMarker}>
+              <View style={styles.markerPulse} />
+              <View style={styles.markerDot} />
+            </View>
+          </Marker>
         )}
 
+        {/* ✅ MARCADOR DEL DESTINO */}
         {destino && (
           <Marker
             coordinate={destino}
             title={destino.nombre}
             description={destino.direccion}
-            pinColor="red"
-          />
+          >
+            <View style={styles.destinationMarker}>
+              <Text style={styles.destinationPin}>📍</Text>
+            </View>
+          </Marker>
         )}
 
+        {/* ✅ RUTA */}
         {ubicacionActual && destino && (
           <MapViewDirections
             origin={ubicacionActual}
@@ -215,15 +222,6 @@ export default function MapaRutas() {
         </View>
       )}
 
-      {/* Modal Login */}
-      <Modal
-        visible={mostrarLogin}
-        transparent={true}
-        animationType="fade"
-        onRequestClose={() => setMostrarLogin(false)}
-      >
-        <Login onClose={() => setMostrarLogin(false)} />
-      </Modal>
 
       {/* Panel de búsqueda */}
       {panelBusquedaVisible && (
@@ -431,7 +429,6 @@ export default function MapaRutas() {
             </View>
           )}
 
-          {/* Botón actualizar ubicación */}
           {!mostrarSugerencias && (
             <TouchableOpacity
               style={styles.refreshButton}
